@@ -1,4 +1,5 @@
 let circles = [];
+let lastCollisionTime = 0;
 
 function setup() {
   createCanvas(400, 400);
@@ -13,7 +14,14 @@ function draw() {
   for (let i = 0; i < circles.length; i++) {
     circles[i].update();
     circles[i].display();
-    circles[i].checkCollision();
+  }
+
+  // Check for collisions every second
+  if (frameCount - lastCollisionTime >= 60) {
+    for (let i = 0; i < circles.length; i++) {
+      circles[i].checkCollision();
+    }
+    lastCollisionTime = frameCount;
   }
 }
 
@@ -52,7 +60,7 @@ class Circle {
           let v = p5.Vector.sub(other.vel, this.vel);
           let vn = v.dot(normalUnit);
           if (vn > 0) return;
-          let restitution = 9;
+          let restitution = 0.9;
           let impulse = normalUnit.mult(-(1 + restitution) * vn);
           this.vel.sub(impulse);
           other.vel.add(impulse);
