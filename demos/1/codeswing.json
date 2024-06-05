@@ -1,5 +1,5 @@
 let circles = [];
-let lastCollisionTime = 0;
+let lastCollisionTime = 0.5;
 let pinkToRed = true;
 
 function setup() {
