@@ -52,7 +52,7 @@ class Circle {
           let v = p5.Vector.sub(other.vel, this.vel);
           let vn = v.dot(normalUnit);
           if (vn > 0) return;
-          let restitution = 0.9;
+          let restitution = 9;
           let impulse = normalUnit.mult(-(1 + restitution) * vn);
           this.vel.sub(impulse);
           other.vel.add(impulse);
