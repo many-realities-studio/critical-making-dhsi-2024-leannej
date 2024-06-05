@@ -1,7 +1,4 @@
-function setup() {
-  createCanvas(windowWidth,windowHeight)
-  print("Hello world")
-}
+
 
 function setup() {
   createCanvas(400, 400);
