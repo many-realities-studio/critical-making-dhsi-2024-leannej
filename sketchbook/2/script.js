@@ -1,11 +1,5 @@
 let circles = [];
 let lastCollisionTime = 0;
-let beepSound;
-
-function preload() {
-  beepSound = loadSound('beep.mp3'); // Load your beep sound file
-}
-
 function setup() {
   createCanvas(400, 400);
   for (let i = 0; i < 12; i++) {
