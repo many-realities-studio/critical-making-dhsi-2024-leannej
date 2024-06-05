@@ -5,7 +5,7 @@ let pinkToRed = true;
 function setup() {
   createCanvas(400,
   400);
-  for (let i = 0; i < 12; i++) {
+  for (let i = 0; i < 12; i++) }
     circles.push(new Circle(random(width), random(height)));
   }
 }
