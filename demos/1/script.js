@@ -2,9 +2,10 @@ function setup() {
   createCanvas(400, 400);
   background(255);
   fill(200,0,200);
-  circle (200,200,200);
-  
-  // Draw hand-drawn circle
+  circle (200,200,100);
+  circle (200,100,100);
+ 
+// Draw hand-drawn circle
   beginShape();
   vertex(100, 100);
   vertex(110, 90);
@@ -15,9 +16,10 @@ function setup() {
   vertex(120, 135);
   vertex(110, 130);
   vertex(100, 115);
-  endShape(CLOSE);
+  endShape(CLOSE); 
+
   
-  // Draw hand-drawn square
+ // Draw hand-drawn square
   beginShape();
   vertex(200, 100);
   vertex(250, 100);
@@ -26,7 +28,7 @@ function setup() {
   vertex(200, 150);
   vertex(195, 140);
   endShape(CLOSE);
-  
+
   // Draw hand-drawn triangle
   beginShape();
   vertex(150, 250);
