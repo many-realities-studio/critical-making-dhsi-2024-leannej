@@ -1,5 +1,7 @@
 let circles = [];
 let lastCollisionTime = 0;
+let pinkToRed = true;
+
 function setup() {
   createCanvas(400, 400);
   for (let i = 0; i < 12; i++) {
@@ -29,6 +31,7 @@ class Circle {
     this.pos = createVector(x, y);
     this.vel = p5.Vector.random2D().mult(2);
     this.radius = 20;
+    this.color = color(255, 192, 203); // Start with pink color
   }
 
   update() {
@@ -42,7 +45,7 @@ class Circle {
   }
 
   display() {
-    fill(255, 192, 203);
+    fill(this.color);
     ellipse(this.pos.x, this.pos.y, this.radius * 2);
   }
 
@@ -64,8 +67,13 @@ class Circle {
           this.vel.sub(impulse);
           other.vel.add(impulse);
 
-          // Play beep sound
-          beepSound.play();
+          // Change color
+          if (pinkToRed) {
+            this.color = color(255, 0, 0); // Change to red
+          } else {
+            this.color = color(255, 192, 203); // Change back to pink
+          }
+          pinkToRed = !pinkToRed; // Toggle between pink and red
         }
       }
     }
