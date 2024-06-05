@@ -1,5 +1,10 @@
 let circles = [];
 let lastCollisionTime = 0;
+let beepSound;
+
+function preload() {
+  beepSound = loadSound('beep.mp3'); // Load your beep sound file
+}
 
 function setup() {
   createCanvas(400, 400);
@@ -64,6 +69,9 @@ class Circle {
           let impulse = normalUnit.mult(-(1 + restitution) * vn);
           this.vel.sub(impulse);
           other.vel.add(impulse);
+
+          // Play beep sound
+          beepSound.play();
         }
       }
     }
