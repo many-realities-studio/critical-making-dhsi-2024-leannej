@@ -1,8 +1,8 @@
 function setup() {
   createCanvas(400, 400);
   background(255);
-  noFill();
-  stroke(0);
+  fill(200,0,200);
+  circle (200,200,200);
   
   // Draw hand-drawn circle
   beginShape();
